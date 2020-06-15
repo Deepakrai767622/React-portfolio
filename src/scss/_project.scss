@@ -16,7 +16,6 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
   background: rgba(0, 137, 172, 0.15);
   top: 0;
   padding: 50px 0;
@@ -49,11 +48,13 @@
     .pr-1 {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       background: white;
       margin: 50px 0;
 
       .pr-img {
-        flex: 1 1 20rem;
+        min-width: 300px;
+        flex: 1 1 30rem;
 
         img {
           width: 100%;
@@ -61,7 +62,7 @@
       }
 
       .pr-text {
-        flex: 1 1 20rem;
+        flex: 1 1 30rem;
         padding: 50px;
 
         h2 {
@@ -70,7 +71,7 @@
         }
 
         p {
-          width: 500px;
+          max-width: 500px;
           margin: 20px 0;
           line-height: 25px;
           text-align: justify;

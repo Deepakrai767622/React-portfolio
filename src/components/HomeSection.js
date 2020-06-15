@@ -69,9 +69,11 @@ export default class HomeSection extends Component {
                 <h2>
                   UI / UX DESIGNER & <br /> FRONT END DEVELOPER
                 </h2>
-                <a href='#' className='btn-banner'>
-                  {" "}
-                  Download CV{" "}
+                <a
+                  href={process.env.PUBLIC_URL + "/img/Deepak_Rai_Resume.pdf"}
+                  target='_blank'
+                  className='btn-banner'>
+                  Download CV
                 </a>
               </div>
               <div className='banner'>
