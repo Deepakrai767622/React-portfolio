@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./scss/style.scss";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
@@ -21,17 +22,31 @@ class App extends Component {
         <div className='App'>
           <Header />
           <ScrollToTop>
-            <Switch>
-              <Route path='/' exact component={HomeSection} />
-              <Route path='/about' component={About} />
-              <Route path='/contact' component={Contact} />
-              <Route path='/projects/wireframe' component={Wireframe} />
-              <Route path='/projects/ui_ux' component={Ui_ux} />
-              <Route path='/projects/react' component={Reactjs} />
-              <Route path='/projects/jquery' component={Jquery} />
-              <Route path='/projects/javascript' component={Javascript} />
-              <Route path='/projects/front' component={Front} />
-            </Switch>
+            <Route
+              render={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition
+                    key={location.key}
+                    timeout={300}
+                    classNames='item'>
+                    <Switch>
+                      <Route path='/' exact component={HomeSection} />
+                      <Route path='/about' component={About} />
+                      <Route path='/contact' component={Contact} />
+                      <Route path='/projects/wireframe' component={Wireframe} />
+                      <Route path='/projects/ui_ux' component={Ui_ux} />
+                      <Route path='/projects/react' component={Reactjs} />
+                      <Route path='/projects/jquery' component={Jquery} />
+                      <Route
+                        path='/projects/javascript'
+                        component={Javascript}
+                      />
+                      <Route path='/projects/front' component={Front} />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
           </ScrollToTop>
           <Footer />
         </div>

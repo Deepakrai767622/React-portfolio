@@ -1,7 +1,13 @@
 @import "darkmode";
 @import "config";
 @import "navbar";
-@import "mobile";
+
+.page {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
 
 * {
   margin: 0;
@@ -16,7 +22,18 @@ body {
   overflow-x: hidden;
 }
 
-//main start
+//main start\
+main:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 61.8%;
+  height: 100%;
+  background-color: rgba($primary-color, 0.15);
+  z-index: -1;
+}
+
 main {
   width: 100vw;
   height: 100vh;
@@ -36,6 +53,13 @@ main {
       object-fit: cover;
       width: 850px;
       height: 500px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 900px;
+      height: 600px;
     }
   }
 
@@ -390,43 +414,43 @@ main {
     color: var(--lightColor);
     padding-bottom: 100px;
   }
+}
 
-  .skill-inner {
-    width: 70%;
-    height: auto;
-    padding: 10px 50px 30px 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    background-color: lighten($primary-color, 52);
+.skill-inner {
+  width: 70%;
+  height: auto;
+  padding: 10px 50px 30px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: lighten($primary-color, 52);
+  overflow: hidden;
+  box-shadow: inset -5px 5px 40px rgba($primary-color, 0.5),
+    inset 5px -5px 20px rgba($primary-color, 0.5);
+  border: 10px solid rgba($primary-color, 0.5);
+  border-radius: 50px;
+
+  .skill-1 {
+    padding: 50px;
+    text-align: center;
     overflow: hidden;
-    box-shadow: inset -5px 5px 40px rgba($primary-color, 0.5),
-      inset 5px -5px 20px rgba($primary-color, 0.5);
-    border: 10px solid rgba($primary-color, 0.5);
-    border-radius: 50px;
+    color: var(--lightColor);
 
-    .skill-1 {
-      padding: 50px;
-      text-align: center;
-      overflow: hidden;
-      color: var(--lightColor);
-
-      h2 {
-        margin: 40px 0 15px 0;
-        font-weight: 500;
-        font-size: 18px;
-      }
-
-      p {
-        margin: 15px 0;
-        font-weight: 300;
-        font-size: 16px;
-      }
+    h2 {
+      margin: 40px 0 15px 0;
+      font-weight: 500;
+      font-size: 18px;
     }
 
-    .skill:nth-child(1) {
-      border-right: 1px dotted var(--lightColor);
+    p {
+      margin: 15px 0;
+      font-weight: 300;
+      font-size: 16px;
     }
+  }
+
+  .skill:nth-child(1) {
+    border-right: 1px dotted var(--lightColor);
   }
 }
 
@@ -633,6 +657,7 @@ fieldset {
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
 }
+
 // =============== Projects Import ==================//
 
 @import "../scss/project";
@@ -640,3 +665,5 @@ fieldset {
 .darkmode {
   display: none;
 }
+
+@import "mobile";
