@@ -24,27 +24,17 @@ class App extends Component {
           <ScrollToTop>
             <Route
               render={({ location }) => (
-                <TransitionGroup>
-                  <CSSTransition
-                    key={location.key}
-                    timeout={300}
-                    classNames='item'>
-                    <Switch>
-                      <Route path='/' exact component={HomeSection} />
-                      <Route path='/about' component={About} />
-                      <Route path='/contact' component={Contact} />
-                      <Route path='/projects/wireframe' component={Wireframe} />
-                      <Route path='/projects/ui_ux' component={Ui_ux} />
-                      <Route path='/projects/react' component={Reactjs} />
-                      <Route path='/projects/jquery' component={Jquery} />
-                      <Route
-                        path='/projects/javascript'
-                        component={Javascript}
-                      />
-                      <Route path='/projects/front' component={Front} />
-                    </Switch>
-                  </CSSTransition>
-                </TransitionGroup>
+                <Switch>
+                  <Route path='/' exact component={HomeSection} />
+                  <Route path='/about' component={About} />
+                  <Route path='/contact' component={Contact} />
+                  <Route path='/projects/wireframe' component={Wireframe} />
+                  <Route path='/projects/ui_ux' component={Ui_ux} />
+                  <Route path='/projects/react' component={Reactjs} />
+                  <Route path='/projects/jquery' component={Jquery} />
+                  <Route path='/projects/javascript' component={Javascript} />
+                  <Route path='/projects/front' component={Front} />
+                </Switch>
               )}
             />
           </ScrollToTop>

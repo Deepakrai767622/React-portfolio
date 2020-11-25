@@ -9,6 +9,7 @@ $raleway: "Raleway", sans-serif;
 $raleway-d: "Raleway Dots", cursive;
 $roboto: "Roboto Slab", serif;
 $primary-color: #00dbbf;
+$secondary-color: #eece1a;
 
 // text style
 $fs-10: 10px;
@@ -32,6 +33,10 @@ $fs-100: 100px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
 }
 
 // universal design

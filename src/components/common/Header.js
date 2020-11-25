@@ -15,12 +15,8 @@ export class Header extends Component {
         />
         {/* <link rel="stylesheet" href={process.env.PUBLIC_URL + "/style.css"} /> */}
         {/* <link rel="stylesheet" href="public/style.css" /> */}
-        <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css.css'
-        />
         <header>
-          <div className='container'>
+        <div className='container'>
             <div className='header-inner'>
               <div className='logo'>
                 <img src={process.env.PUBLIC_URL + "/img/logo.svg"} alt='' />
