@@ -20,10 +20,10 @@
     }
 
     .text {
-      padding-left: 100px;
       flex: 1 1 30rem;
+      margin: auto;
       padding: 0;
-      margin-top: 50px;
+
       h1 {
         font-family: $raleway;
         font-weight: 400;
@@ -31,7 +31,7 @@
         font-size: 60px;
         letter-spacing: 10px;
         transition: all 0.5s;
-        text-align: center;
+        text-align: left;
       }
 
       h2 {
@@ -44,7 +44,6 @@
         letter-spacing: 3px;
         transition: all 0.5s;
         text-align: left;
-        text-align: center;
       }
 
       p {
@@ -70,7 +69,7 @@
         font-family: $raleway;
         font-weight: 700;
         letter-spacing: 2px;
-        margin: auto;
+        // margin: auto;
         margin-top: 30px;
         transition: all 0.5s ease-in-out;
 
@@ -92,7 +91,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
   .skill {
     padding: 0px;
   }
@@ -121,5 +120,27 @@
 
   .pr-text {
     padding: 20px;
+  }
+
+  .text {
+    flex: 1 1 30rem;
+    margin: 100px 150px;
+    padding: 0;
+
+    h1 {
+      font-size: 40px !important;
+      letter-spacing: 5px;
+      transition: all 0.5s;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 20px !important;
+      font-weight: 400 !important;
+      line-height: 30px;
+      color: var(--lightColor);
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
   }
 }
